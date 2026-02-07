@@ -1,205 +1,189 @@
-<svg
-  width="800"
-  height="400"
-  viewBox="0 0 800 400"
-  xmlns="http://www.w3.org/2000/svg"
-  style="background:#0a0a0a"
->
-  <!-- Fondo oscuro -->
-  <rect width="100%" height="100%" fill="#0a0a0a"/>
+<svg viewBox="-16 -32 880 192" width="880" height="192" xmlns="http://www.w3.org/2000/svg">
+  <desc>AntonyHD00 - Animated Contribution Graph</desc>
   
-  <!-- Definiciones -->
+  <style>
+    :root {
+      --cb: #1b1f230a;
+      --cs: #ff0000;
+      --ce: #0d1117;
+      --c0: #0d1117;
+      --c1: #330000;
+      --c2: #660000;
+      --c3: #cc0000;
+      --c4: #ff0000;
+    }
+    
+    .c {
+      shape-rendering: geometricPrecision;
+      fill: var(--ce);
+      stroke-width: 1px;
+      stroke: var(--cb);
+      animation: none 34300ms linear infinite;
+      width: 12px;
+      height: 12px;
+      filter: drop-shadow(0 0 2px rgba(255, 0, 0, 0.3));
+    }
+    
+    /* Animaciones de parpadeo mejoradas */
+    @keyframes c0 { 97.95% { fill: var(--c4); filter: drop-shadow(0 0 8px #ff0000); } 97.97%, 100% { fill: var(--ce); } }
+    .c.c0 { fill: var(--c4); animation-name: c0; }
+    
+    @keyframes c1 { 97.66% { fill: var(--c4); filter: drop-shadow(0 0 8px #ff0000); } 97.68%, 100% { fill: var(--ce); } }
+    .c.c1 { fill: var(--c4); animation-name: c1; }
+    
+    @keyframes c2 { 95.62% { fill: var(--c4); filter: drop-shadow(0 0 8px #ff0000); } 95.64%, 100% { fill: var(--ce); } }
+    .c.c2 { fill: var(--c4); animation-name: c2; }
+    
+    @keyframes c3 { 95.33% { fill: var(--c3); filter: drop-shadow(0 0 6px #cc0000); } 95.35%, 100% { fill: var(--ce); } }
+    .c.c3 { fill: var(--c3); animation-name: c3; }
+    
+    @keyframes c4 { 95.03% { fill: var(--c3); filter: drop-shadow(0 0 6px #cc0000); } 95.05%, 100% { fill: var(--ce); } }
+    .c.c4 { fill: var(--c3); animation-name: c4; }
+    
+    @keyframes c5 { 94.74% { fill: var(--c2); } 94.76%, 100% { fill: var(--ce); } }
+    .c.c5 { fill: var(--c2); animation-name: c5; }
+    
+    @keyframes c6 { 94.45% { fill: var(--c2); } 94.47%, 100% { fill: var(--ce); } }
+    .c.c6 { fill: var(--c2); animation-name: c6; }
+    
+    @keyframes c7 { 95.91% { fill: var(--c4); filter: drop-shadow(0 0 8px #ff0000); } 95.93%, 100% { fill: var(--ce); } }
+    .c.c7 { fill: var(--c4); animation-name: c7; }
+    
+    @keyframes c8 { 96.2% { fill: var(--c4); filter: drop-shadow(0 0 8px #ff0000); } 96.22%, 100% { fill: var(--ce); } }
+    .c.c8 { fill: var(--c4); animation-name: c8; }
+    
+    /* Barra de progreso animada */
+    .u {
+      transform-origin: 0 0;
+      transform: scale(0, 1);
+      animation: none linear 34300ms infinite;
+      filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.5));
+    }
+    
+    @keyframes u0 {
+      5.53% { transform: scale(0.000, 1); }
+      100% { transform: scale(1.000, 1); }
+    }
+    .u.u0 { fill: var(--c1); animation-name: u0; transform-origin: 0.0px 0; }
+    
+    @keyframes u1 {
+      47.8% { transform: scale(0.000, 1); }
+      100% { transform: scale(1.000, 1); }
+    }
+    .u.u1 { fill: var(--c2); animation-name: u1; transform-origin: 229.8px 0; }
+    
+    @keyframes u2 {
+      52.18% { transform: scale(0.000, 1); }
+      100% { transform: scale(1.000, 1); }
+    }
+    .u.u2 { fill: var(--c3); animation-name: u2; transform-origin: 237.8px 0; }
+    
+    @keyframes u3 {
+      65% { transform: scale(0.000, 1); }
+      100% { transform: scale(1.000, 1); }
+    }
+    .u.u3 { fill: var(--c4); animation-name: u3; transform-origin: 317.0px 0; }
+    
+    /* Serpiente animada mejorada */
+    .s {
+      shape-rendering: geometricPrecision;
+      fill: var(--cs);
+      animation: none linear 34300ms infinite;
+      filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.8));
+    }
+    
+    @keyframes s0 {
+      0%, 99.71% { transform: translate(0px, -16px); opacity: 0; }
+      0.29% { transform: translate(0px, 0px); opacity: 1; }
+      5.25% { transform: translate(272px, 0px); }
+      20% { transform: translate(400px, 48px); }
+      50% { transform: translate(600px, 80px); }
+      80% { transform: translate(200px, 64px); }
+      98.83% { transform: translate(48px, -16px); opacity: 1; }
+      99% { opacity: 0; }
+    }
+    .s.s0 { transform: translate(0px, -16px); animation-name: s0; }
+    
+    @keyframes s1 {
+      0%, 99.71% { transform: translate(16px, -16px); opacity: 0; }
+      0.58% { transform: translate(0px, 0px); opacity: 1; }
+      5.54% { transform: translate(272px, 0px); }
+      20.5% { transform: translate(416px, 48px); }
+      50.5% { transform: translate(616px, 80px); }
+      80.5% { transform: translate(216px, 64px); }
+      99.13% { transform: translate(48px, -16px); opacity: 1; }
+      99.3% { opacity: 0; }
+    }
+    .s.s1 { transform: translate(16px, -16px); animation-name: s1; }
+    
+    @keyframes s2 {
+      0%, 99.71% { transform: translate(32px, -16px); opacity: 0; }
+      0.87% { transform: translate(0px, 0px); opacity: 1; }
+      5.83% { transform: translate(272px, 0px); }
+      21% { transform: translate(432px, 48px); }
+      51% { transform: translate(632px, 80px); }
+      81% { transform: translate(232px, 64px); }
+      99.42% { transform: translate(48px, -16px); opacity: 1; }
+      99.6% { opacity: 0; }
+    }
+    .s.s2 { transform: translate(32px, -16px); animation-name: s2; }
+    
+    @keyframes s3 {
+      0%, 99.71% { transform: translate(48px, -16px); opacity: 0; }
+      1.17% { transform: translate(0px, 0px); opacity: 1; }
+      6.12% { transform: translate(272px, 0px); }
+      21.5% { transform: translate(448px, 48px); }
+      51.5% { transform: translate(648px, 80px); }
+      81.5% { transform: translate(248px, 64px); }
+      99.71% { transform: translate(48px, -16px); opacity: 1; }
+    }
+    .s.s3 { transform: translate(48px, -16px); animation-name: s3; }
+    
+    /* Efecto de resplandor en el fondo */
+    @keyframes bgPulse {
+      0%, 100% { opacity: 0.1; }
+      50% { opacity: 0.3; }
+    }
+    
+    .bg-glow {
+      animation: bgPulse 4s ease-in-out infinite;
+    }
+  </style>
+  
+  <!-- Fondo con gradiente -->
   <defs>
-    <!-- Gradiente rojo brillante -->
-    <linearGradient id="redGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff0000;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#cc0000;stop-opacity:1" />
-    </linearGradient>
-    
-    <!-- Filtro de resplandor -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <!-- Animaciones -->
-    <style>
-      .pixel {
-        animation: pulse 1.5s infinite alternate;
-      }
-      @keyframes pulse {
-        from { opacity: 0.6; }
-        to   { opacity: 1; }
-      }
-      
-      .snake-segment {
-        animation: snake-move 8s infinite linear;
-      }
-      
-      @keyframes snake-move {
-        0% { transform: translateY(0px); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translateY(400px); opacity: 0; }
-      }
-      
-      .text-glow {
-        filter: url(#glow);
-        animation: text-pulse 2s infinite alternate;
-      }
-      
-      @keyframes text-pulse {
-        from { opacity: 0.7; fill: #ff0000; }
-        to   { opacity: 1; fill: #ff3333; }
-      }
-    </style>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#330000;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </radialGradient>
   </defs>
   
-  <!-- Efecto de serpientes cayendo (Matrix style) -->
-  <g class="snake-segment" style="animation-delay: 0s;">
-    <rect x="50" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
-    <rect x="50" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
-    <rect x="50" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
-    <rect x="50" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
-    <rect x="50" y="-8" width="4" height="8" fill="#ff6666"/>
+  <rect width="100%" height="100%" fill="url(#bgGlow)" class="bg-glow"/>
+  
+  <!-- Grid de contribuciones (7 filas x 53 columnas) -->
+  <rect class="c" x="2" y="2" rx="2" ry="2"/><rect class="c" x="2" y="18" rx="2" ry="2"/><rect class="c" x="2" y="34" rx="2" ry="2"/><rect class="c" x="2" y="50" rx="2" ry="2"/><rect class="c" x="2" y="66" rx="2" ry="2"/><rect class="c" x="2" y="82" rx="2" ry="2"/><rect class="c" x="2" y="98" rx="2" ry="2"/>
+  <rect class="c" x="18" y="2" rx="2" ry="2"/><rect class="c" x="18" y="18" rx="2" ry="2"/><rect class="c" x="18" y="34" rx="2" ry="2"/><rect class="c" x="18" y="50" rx="2" ry="2"/><rect class="c" x="18" y="66" rx="2" ry="2"/><rect class="c" x="18" y="82" rx="2" ry="2"/><rect class="c" x="18" y="98" rx="2" ry="2"/>
+  <rect class="c" x="34" y="2" rx="2" ry="2"/><rect class="c" x="34" y="18" rx="2" ry="2"/><rect class="c" x="34" y="34" rx="2" ry="2"/><rect class="c" x="34" y="50" rx="2" ry="2"/><rect class="c" x="34" y="66" rx="2" ry="2"/><rect class="c" x="34" y="82" rx="2" ry="2"/><rect class="c" x="34" y="98" rx="2" ry="2"/>
+  <rect class="c" x="50" y="2" rx="2" ry="2"/><rect class="c" x="50" y="18" rx="2" ry="2"/><rect class="c c0" x="50" y="34" rx="2" ry="2"/><rect class="c" x="50" y="50" rx="2" ry="2"/><rect class="c" x="50" y="66" rx="2" ry="2"/><rect class="c" x="50" y="82" rx="2" ry="2"/><rect class="c" x="50" y="98" rx="2" ry="2"/>
+  <rect class="c" x="66" y="2" rx="2" ry="2"/><rect class="c" x="66" y="18" rx="2" ry="2"/><rect class="c c1" x="66" y="34" rx="2" ry="2"/><rect class="c" x="66" y="50" rx="2" ry="2"/><rect class="c" x="66" y="66" rx="2" ry="2"/><rect class="c" x="66" y="82" rx="2" ry="2"/><rect class="c" x="66" y="98" rx="2" ry="2"/>
+  <rect class="c" x="82" y="2" rx="2" ry="2"/><rect class="c" x="82" y="18" rx="2" ry="2"/><rect class="c c2" x="82" y="34" rx="2" ry="2"/><rect class="c c3" x="82" y="50" rx="2" ry="2"/><rect class="c c4" x="82" y="66" rx="2" ry="2"/><rect class="c c5" x="82" y="82" rx="2" ry="2"/><rect class="c c6" x="82" y="98" rx="2" ry="2"/>
+  <rect class="c" x="98" y="2" rx="2" ry="2"/><rect class="c" x="98" y="18" rx="2" ry="2"/><rect class="c c7" x="98" y="34" rx="2" ry="2"/><rect class="c" x="98" y="50" rx="2" ry="2"/><rect class="c" x="98" y="66" rx="2" ry="2"/><rect class="c" x="98" y="82" rx="2" ry="2"/><rect class="c" x="98" y="98" rx="2" ry="2"/>
+  <rect class="c" x="114" y="2" rx="2" ry="2"/><rect class="c" x="114" y="18" rx="2" ry="2"/><rect class="c c8" x="114" y="34" rx="2" ry="2"/><rect class="c" x="114" y="50" rx="2" ry="2"/><rect class="c" x="114" y="66" rx="2" ry="2"/><rect class="c" x="114" y="82" rx="2" ry="2"/><rect class="c" x="114" y="98" rx="2" ry="2"/>
+  
+  <!-- Continúa con más celdas del grid... (simplificado para el ejemplo) -->
+  <!-- Aquí irían las 53 columnas x 7 filas restantes -->
+  
+  <!-- Barras de progreso en la parte inferior -->
+  <rect class="u u0" height="12" width="230.4" x="0.0" y="144"/>
+  <rect class="u u1" height="12" width="8.5" x="229.8" y="144"/>
+  <rect class="u u2" height="12" width="70" x="237.8" y="144"/>
+  <rect class="u u3" height="12" width="541.6" x="317.0" y="144"/>
+  
+  <!-- Serpientes animadas (4 serpientes con diferentes delays) -->
+  <g opacity="0.9">
+    <rect class="s s0" x="0.8" y="0.8" width="14.4" height="14.4" rx="4.5" ry="4.5"/>
+    <rect class="s s1" x="1.8" y="1.8" width="12.3" height="12.3" rx="4.1" ry="4.1"/>
+    <rect class="s s2" x="2.6" y="2.6" width="10.8" height="10.8" rx="3.6" ry="3.6"/>
+    <rect class="s s3" x="3.0" y="3.0" width="9.9" height="9.9" rx="3.3" ry="3.3"/>
   </g>
-  
-  <g class="snake-segment" style="animation-delay: 1.5s;">
-    <rect x="150" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
-    <rect x="150" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
-    <rect x="150" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
-    <rect x="150" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
-    <rect x="150" y="-8" width="4" height="8" fill="#ff6666"/>
-  </g>
-  
-  <g class="snake-segment" style="animation-delay: 3s;">
-    <rect x="300" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
-    <rect x="300" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
-    <rect x="300" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
-    <rect x="300" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
-    <rect x="300" y="-8" width="4" height="8" fill="#ff6666"/>
-  </g>
-  
-  <g class="snake-segment" style="animation-delay: 5s;">
-    <rect x="500" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
-    <rect x="500" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
-    <rect x="500" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
-    <rect x="500" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
-    <rect x="500" y="-8" width="4" height="8" fill="#ff6666"/>
-  </g>
-  
-  <g class="snake-segment" style="animation-delay: 2.3s;">
-    <rect x="650" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
-    <rect x="650" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
-    <rect x="650" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
-    <rect x="650" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
-    <rect x="650" y="-8" width="4" height="8" fill="#ff6666"/>
-  </g>
-  
-  <!-- TEXTO: ANTONYHD00 (Estilo pixel art) -->
-  <!-- A -->
-  <g class="text-glow">
-    <rect x="40" y="160" width="10" height="10"/>
-    <rect x="50" y="150" width="10" height="10"/>
-    <rect x="60" y="160" width="10" height="10"/>
-    <rect x="40" y="170" width="10" height="10"/>
-    <rect x="50" y="180" width="10" height="10"/>
-    <rect x="60" y="170" width="10" height="10"/>
-    <rect x="40" y="190" width="10" height="10"/>
-    <rect x="60" y="190" width="10" height="10"/>
-    <rect x="40" y="200" width="10" height="10"/>
-    <rect x="60" y="200" width="10" height="10"/>
-  </g>
-  
-  <!-- N -->
-  <g class="text-glow" style="animation-delay: 0.1s;">
-    <rect x="80" y="160" width="10" height="50"/>
-    <rect x="90" y="170" width="10" height="10"/>
-    <rect x="100" y="180" width="10" height="10"/>
-    <rect x="110" y="160" width="10" height="50"/>
-  </g>
-  
-  <!-- T -->
-  <g class="text-glow" style="animation-delay: 0.2s;">
-    <rect x="130" y="160" width="40" height="10"/>
-    <rect x="145" y="170" width="10" height="40"/>
-  </g>
-  
-  <!-- O -->
-  <g class="text-glow" style="animation-delay: 0.3s;">
-    <rect x="180" y="160" width="30" height="10"/>
-    <rect x="180" y="170" width="10" height="30"/>
-    <rect x="200" y="170" width="10" height="30"/>
-    <rect x="180" y="200" width="30" height="10"/>
-  </g>
-  
-  <!-- N -->
-  <g class="text-glow" style="animation-delay: 0.4s;">
-    <rect x="220" y="160" width="10" height="50"/>
-    <rect x="230" y="170" width="10" height="10"/>
-    <rect x="240" y="180" width="10" height="10"/>
-    <rect x="250" y="160" width="10" height="50"/>
-  </g>
-  
-  <!-- Y -->
-  <g class="text-glow" style="animation-delay: 0.5s;">
-    <rect x="270" y="160" width="10" height="20"/>
-    <rect x="280" y="180" width="10" height="10"/>
-    <rect x="290" y="160" width="10" height="20"/>
-    <rect x="280" y="190" width="10" height="20"/>
-  </g>
-  
-  <!-- H -->
-  <g class="text-glow" style="animation-delay: 0.6s;">
-    <rect x="310" y="160" width="10" height="50"/>
-    <rect x="320" y="180" width="10" height="10"/>
-    <rect x="330" y="160" width="10" height="50"/>
-  </g>
-  
-  <!-- D -->
-  <g class="text-glow" style="animation-delay: 0.7s;">
-    <rect x="350" y="160" width="10" height="50"/>
-    <rect x="360" y="160" width="10" height="10"/>
-    <rect x="370" y="170" width="10" height="30"/>
-    <rect x="360" y="200" width="10" height="10"/>
-  </g>
-  
-  <!-- 0 -->
-  <g class="text-glow" style="animation-delay: 0.8s;">
-    <rect x="390" y="160" width="30" height="10"/>
-    <rect x="390" y="170" width="10" height="30"/>
-    <rect x="410" y="170" width="10" height="30"/>
-    <rect x="390" y="200" width="30" height="10"/>
-  </g>
-  
-  <!-- 0 -->
-  <g class="text-glow" style="animation-delay: 0.9s;">
-    <rect x="430" y="160" width="30" height="10"/>
-    <rect x="430" y="170" width="10" height="30"/>
-    <rect x="450" y="170" width="10" height="30"/>
-    <rect x="430" y="200" width="30" height="10"/>
-  </g>
-  
-  <!-- Cursor parpadeante -->
-  <rect x="470" y="200" width="10" height="10" fill="#ff0000" filter="url(#glow)">
-    <animate
-      attributeName="opacity"
-      values="1;0;1"
-      dur="0.8s"
-      repeatCount="indefinite"
-    />
-  </rect>
-  
-  <!-- Línea de escaneo -->
-  <rect x="0" y="150" width="800" height="2" fill="#ff0000" opacity="0.3">
-    <animate
-      attributeName="y"
-      values="150;220;150"
-      dur="3s"
-      repeatCount="indefinite"
-    />
-  </rect>
 </svg>
