@@ -1,111 +1,205 @@
 <svg
   width="800"
-  height="200"
-  viewBox="0 0 800 200"
+  height="400"
+  viewBox="0 0 800 400"
   xmlns="http://www.w3.org/2000/svg"
-  style="background:#050505"
+  style="background:#0a0a0a"
 >
-
-  <!-- Fondo -->
-  <rect width="100%" height="100%" fill="#050505"/>
-
-  <!-- Definición de animación de parpadeo -->
+  <!-- Fondo oscuro -->
+  <rect width="100%" height="100%" fill="#0a0a0a"/>
+  
+  <!-- Definiciones -->
   <defs>
+    <!-- Gradiente rojo brillante -->
+    <linearGradient id="redGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cc0000;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filtro de resplandor -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Animaciones -->
     <style>
       .pixel {
-        animation: glow 2s infinite alternate;
+        animation: pulse 1.5s infinite alternate;
       }
-
-      @keyframes glow {
-        from { opacity: 0.3; }
+      @keyframes pulse {
+        from { opacity: 0.6; }
         to   { opacity: 1; }
+      }
+      
+      .snake-segment {
+        animation: snake-move 8s infinite linear;
+      }
+      
+      @keyframes snake-move {
+        0% { transform: translateY(0px); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(400px); opacity: 0; }
+      }
+      
+      .text-glow {
+        filter: url(#glow);
+        animation: text-pulse 2s infinite alternate;
+      }
+      
+      @keyframes text-pulse {
+        from { opacity: 0.7; fill: #ff0000; }
+        to   { opacity: 1; fill: #ff3333; }
       }
     </style>
   </defs>
-
-  <!-- TEXTO TIPO MATRIZ -->
-  <!-- Cada rect es un “pixel” -->
-
-  <!-- T -->
-  <g fill="#00ff88">
-    <rect x="100" y="50" width="12" height="12"/>
-    <rect x="112" y="50" width="12" height="12"/>
-    <rect x="124" y="50" width="12" height="12"/>
-    <rect x="136" y="50" width="12" height="12"/>
-    <rect x="148" y="50" width="12" height="12"/>
-
-    <rect x="124" y="62" width="12" height="12"/>
-    <rect x="124" y="74" width="12" height="12"/>
-    <rect x="124" y="86" width="12" height="12"/>
-    <rect x="124" y="98" width="12" height="12"/>
+  
+  <!-- Efecto de serpientes cayendo (Matrix style) -->
+  <g class="snake-segment" style="animation-delay: 0s;">
+    <rect x="50" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
+    <rect x="50" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
+    <rect x="50" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
+    <rect x="50" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
+    <rect x="50" y="-8" width="4" height="8" fill="#ff6666"/>
   </g>
-
-  <!-- R -->
-  <g fill="#00ff88">
-    <rect x="180" y="50" width="12" height="12"/>
-    <rect x="192" y="50" width="12" height="12"/>
-    <rect x="204" y="50" width="12" height="12"/>
-
-    <rect x="180" y="62" width="12" height="12"/>
-    <rect x="204" y="62" width="12" height="12"/>
-
-    <rect x="180" y="74" width="12" height="12"/>
-    <rect x="192" y="74" width="12" height="12"/>
-
-    <rect x="180" y="86" width="12" height="12"/>
-    <rect x="204" y="86" width="12" height="12"/>
-
-    <rect x="180" y="98" width="12" height="12"/>
-    <rect x="204" y="98" width="12" height="12"/>
+  
+  <g class="snake-segment" style="animation-delay: 1.5s;">
+    <rect x="150" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
+    <rect x="150" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
+    <rect x="150" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
+    <rect x="150" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
+    <rect x="150" y="-8" width="4" height="8" fill="#ff6666"/>
   </g>
-
-  <!-- O -->
-  <g fill="#00ff88">
-    <rect x="240" y="50" width="12" height="12"/>
-    <rect x="252" y="50" width="12" height="12"/>
-    <rect x="264" y="50" width="12" height="12"/>
-
-    <rect x="240" y="62" width="12" height="12"/>
-    <rect x="264" y="62" width="12" height="12"/>
-
-    <rect x="240" y="74" width="12" height="12"/>
-    <rect x="264" y="74" width="12" height="12"/>
-
-    <rect x="240" y="86" width="12" height="12"/>
-    <rect x="264" y="86" width="12" height="12"/>
-
-    <rect x="240" y="98" width="12" height="12"/>
-    <rect x="252" y="98" width="12" height="12"/>
-    <rect x="264" y="98" width="12" height="12"/>
+  
+  <g class="snake-segment" style="animation-delay: 3s;">
+    <rect x="300" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
+    <rect x="300" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
+    <rect x="300" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
+    <rect x="300" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
+    <rect x="300" y="-8" width="4" height="8" fill="#ff6666"/>
   </g>
-
+  
+  <g class="snake-segment" style="animation-delay: 5s;">
+    <rect x="500" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
+    <rect x="500" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
+    <rect x="500" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
+    <rect x="500" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
+    <rect x="500" y="-8" width="4" height="8" fill="#ff6666"/>
+  </g>
+  
+  <g class="snake-segment" style="animation-delay: 2.3s;">
+    <rect x="650" y="-40" width="4" height="8" fill="#ff0000" opacity="0.3"/>
+    <rect x="650" y="-32" width="4" height="8" fill="#ff0000" opacity="0.5"/>
+    <rect x="650" y="-24" width="4" height="8" fill="#ff0000" opacity="0.7"/>
+    <rect x="650" y="-16" width="4" height="8" fill="#ff3333" opacity="0.9"/>
+    <rect x="650" y="-8" width="4" height="8" fill="#ff6666"/>
+  </g>
+  
+  <!-- TEXTO: ANTONYHD00 (Estilo pixel art) -->
+  <!-- A -->
+  <g class="text-glow">
+    <rect x="40" y="160" width="10" height="10"/>
+    <rect x="50" y="150" width="10" height="10"/>
+    <rect x="60" y="160" width="10" height="10"/>
+    <rect x="40" y="170" width="10" height="10"/>
+    <rect x="50" y="180" width="10" height="10"/>
+    <rect x="60" y="170" width="10" height="10"/>
+    <rect x="40" y="190" width="10" height="10"/>
+    <rect x="60" y="190" width="10" height="10"/>
+    <rect x="40" y="200" width="10" height="10"/>
+    <rect x="60" y="200" width="10" height="10"/>
+  </g>
+  
   <!-- N -->
-  <g fill="#00ff88">
-    <rect x="300" y="50" width="12" height="12"/>
-    <rect x="300" y="62" width="12" height="12"/>
-    <rect x="300" y="74" width="12" height="12"/>
-    <rect x="300" y="86" width="12" height="12"/>
-    <rect x="300" y="98" width="12" height="12"/>
-
-    <rect x="312" y="62" width="12" height="12"/>
-    <rect x="324" y="74" width="12" height="12"/>
-    <rect x="336" y="86" width="12" height="12"/>
-
-    <rect x="348" y="50" width="12" height="12"/>
-    <rect x="348" y="62" width="12" height="12"/>
-    <rect x="348" y="74" width="12" height="12"/>
-    <rect x="348" y="86" width="12" height="12"/>
-    <rect x="348" y="98" width="12" height="12"/>
+  <g class="text-glow" style="animation-delay: 0.1s;">
+    <rect x="80" y="160" width="10" height="50"/>
+    <rect x="90" y="170" width="10" height="10"/>
+    <rect x="100" y="180" width="10" height="10"/>
+    <rect x="110" y="160" width="10" height="50"/>
   </g>
-
-  <!-- Cursor -->
-  <rect x="380" y="98" width="12" height="12" fill="#bb00ff">
+  
+  <!-- T -->
+  <g class="text-glow" style="animation-delay: 0.2s;">
+    <rect x="130" y="160" width="40" height="10"/>
+    <rect x="145" y="170" width="10" height="40"/>
+  </g>
+  
+  <!-- O -->
+  <g class="text-glow" style="animation-delay: 0.3s;">
+    <rect x="180" y="160" width="30" height="10"/>
+    <rect x="180" y="170" width="10" height="30"/>
+    <rect x="200" y="170" width="10" height="30"/>
+    <rect x="180" y="200" width="30" height="10"/>
+  </g>
+  
+  <!-- N -->
+  <g class="text-glow" style="animation-delay: 0.4s;">
+    <rect x="220" y="160" width="10" height="50"/>
+    <rect x="230" y="170" width="10" height="10"/>
+    <rect x="240" y="180" width="10" height="10"/>
+    <rect x="250" y="160" width="10" height="50"/>
+  </g>
+  
+  <!-- Y -->
+  <g class="text-glow" style="animation-delay: 0.5s;">
+    <rect x="270" y="160" width="10" height="20"/>
+    <rect x="280" y="180" width="10" height="10"/>
+    <rect x="290" y="160" width="10" height="20"/>
+    <rect x="280" y="190" width="10" height="20"/>
+  </g>
+  
+  <!-- H -->
+  <g class="text-glow" style="animation-delay: 0.6s;">
+    <rect x="310" y="160" width="10" height="50"/>
+    <rect x="320" y="180" width="10" height="10"/>
+    <rect x="330" y="160" width="10" height="50"/>
+  </g>
+  
+  <!-- D -->
+  <g class="text-glow" style="animation-delay: 0.7s;">
+    <rect x="350" y="160" width="10" height="50"/>
+    <rect x="360" y="160" width="10" height="10"/>
+    <rect x="370" y="170" width="10" height="30"/>
+    <rect x="360" y="200" width="10" height="10"/>
+  </g>
+  
+  <!-- 0 -->
+  <g class="text-glow" style="animation-delay: 0.8s;">
+    <rect x="390" y="160" width="30" height="10"/>
+    <rect x="390" y="170" width="10" height="30"/>
+    <rect x="410" y="170" width="10" height="30"/>
+    <rect x="390" y="200" width="30" height="10"/>
+  </g>
+  
+  <!-- 0 -->
+  <g class="text-glow" style="animation-delay: 0.9s;">
+    <rect x="430" y="160" width="30" height="10"/>
+    <rect x="430" y="170" width="10" height="30"/>
+    <rect x="450" y="170" width="10" height="30"/>
+    <rect x="430" y="200" width="30" height="10"/>
+  </g>
+  
+  <!-- Cursor parpadeante -->
+  <rect x="470" y="200" width="10" height="10" fill="#ff0000" filter="url(#glow)">
     <animate
       attributeName="opacity"
       values="1;0;1"
-      dur="1s"
+      dur="0.8s"
       repeatCount="indefinite"
     />
   </rect>
-
+  
+  <!-- Línea de escaneo -->
+  <rect x="0" y="150" width="800" height="2" fill="#ff0000" opacity="0.3">
+    <animate
+      attributeName="y"
+      values="150;220;150"
+      dur="3s"
+      repeatCount="indefinite"
+    />
+  </rect>
 </svg>
